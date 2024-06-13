@@ -122,6 +122,7 @@ export default function Test({ urlList }: HeroProps) {
 export async function getServerSideProps() {
   // call API on load
   try {
+    console.log('Fetching data from:', process.env.URL + '/api/urls');
     const res = await fetch(process.env.URL + '/api/urls');
 
     if (!res.ok) {
